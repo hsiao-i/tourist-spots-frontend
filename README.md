@@ -2,13 +2,13 @@
 
 後臺登入：
 ```
-後臺帳號：test1@gmail.com
+後臺帳號：test1@mail.com
 後臺密碼：qwerasdzz
 ```
 
 前臺登入：
 ```
-前臺帳號：user1@gmail.com
+前臺帳號：user1@mail.com
 前臺密碼：qwerasdzz
 ```
 
