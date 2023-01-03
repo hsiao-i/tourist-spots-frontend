@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkhexschool_project_frontend"]=self["webpackChunkhexschool_project_frontend"]||[]).push([[443],{7381:function(n,e,t){t.r(e),t.d(e,{default:function(){return i}});var o=t(6252);const r={class:"about"},c=(0,o._)("h1",null,"This is an about page",-1),s=[c];function u(n,e){return(0,o.wg)(),(0,o.iD)("div",r,s)}var a=t(3744);const h={},f=(0,a.Z)(h,[["render",u]]);var i=f}}]);
+//# sourceMappingURL=about.cb4088ec.js.map
