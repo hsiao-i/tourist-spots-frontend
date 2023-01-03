@@ -1,4 +1,5 @@
 <template>
+  <FrontNavbar />
   <div class="container mt-5 w-50">
     <h2>註冊</h2>
     <form @submit.prevent="register">
@@ -29,7 +30,12 @@
 </template>
 
 <script>
+import FrontNavbar from '@/components/FrontNavbar.vue';
+
 export default {
+  components: {
+    FrontNavbar,
+  },
   data() {
     return {
       user: {

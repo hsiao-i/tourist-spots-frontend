@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 min-vh-100">
     <h2>觀光景點</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4 h-100">
       <div class="col" v-for="spot in touristSpots" :key="spot.id">
@@ -24,11 +24,13 @@
 export default {
   data() {
     return {
+      isLoading: false,
       touristSpots: [],
     };
   },
   methods: {
     getTouristSpots() {
+      this.isLoading = true;
       this.$http
         .get(`${process.env.VUE_APP_API}/api/tourist-spots`)
         .then((res) => {
@@ -45,5 +47,3 @@ export default {
   },
 };
 </script>
-
-<style></style>

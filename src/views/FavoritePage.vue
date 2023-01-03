@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 min-vh-100">
     <h2>我的收藏</h2>
     <div v-if="favoriteSpots.length === 0"><p class="text-center text-secondary">目前無收藏</p></div>
     <table v-else class="table table-striped">

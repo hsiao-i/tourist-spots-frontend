@@ -12,5 +12,6 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'max-len': ['error', { code: 210 }],
     'no-alert': 'off',
+    'no-useless-escape': 'off',
   },
 };

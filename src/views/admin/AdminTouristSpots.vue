@@ -22,7 +22,7 @@
     </tbody>
   </table>
 
-  <div class="w-50 mt-5">
+  <div class="w-50 my-5">
     <h3>新增編輯區塊</h3>
     <div class="mb-3">
       <label for="title" class="form-label w-100">

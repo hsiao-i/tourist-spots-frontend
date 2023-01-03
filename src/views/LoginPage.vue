@@ -53,13 +53,13 @@ export default {
           const accessToken = res.data.success.access_token;
           const refreshToken = res.data.success.refresh_token;
 
-          if (this.user.useremail === 'test1@gmail.com') {
+          if (this.user.useremail === 'test1@mail.com' || 'test1@gmail.com') {
             document.cookie = `accessToken=${accessToken}`;
             document.cookie = `refreshToken=${refreshToken}`;
 
             this.$router.push({ path: '/admin' });
             alert('成功登入後台');
-          } else if (this.user.useremail === 'user1@gmail.com') {
+          } else {
             alert('成功登入');
             document.cookie = `accessToken=${accessToken}`;
             document.cookie = `refreshToken=${refreshToken}`;

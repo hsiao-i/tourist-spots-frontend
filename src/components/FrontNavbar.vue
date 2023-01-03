@@ -23,12 +23,19 @@
           <li class="nav-item">
             <router-link to="/favorite" class="nav-link">我的收藏</router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/register" class="nav-link">註冊</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/login" class="nav-link">登入</router-link>
-          </li>
+          <template v-if="notSavedAccessToken">
+            <li class="nav-item">
+              <router-link to="/register" class="nav-link">註冊</router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link">登入</router-link>
+            </li>
+          </template>
+          <template v-if="!notSavedAccessToken">
+            <li class="nav-item">
+              <router-link to="/login" class="nav-link" @click="signOut">登出</router-link>
+            </li>
+          </template>
         </ul>
       </div>
     </div>
@@ -40,6 +47,30 @@ import mixinCollapse from '@/mixins/mixinCollapse';
 
 export default {
   mixins: [mixinCollapse],
+  data() {
+    return {
+      notSavedAccessToken: true,
+    };
+  },
+  methods: {
+    getCookie() {
+      const refreshToken = document.cookie.replace(/(?:(?:^|.*;\s*)refreshToken\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+
+      if (refreshToken !== null) {
+        this.notSavedAccessToken = false;
+      }
+    },
+    signOut() {
+      document.cookie = 'accessToken=;';
+      document.cookie = 'refreshToken=;';
+      this.notSavedAccessToken = true;
+      this.$router.push('/');
+      console.log(document.cookie);
+    },
+  },
+  mounted() {
+    this.getCookie();
+  },
 };
 </script>
 

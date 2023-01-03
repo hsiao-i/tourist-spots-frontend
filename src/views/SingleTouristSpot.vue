@@ -1,10 +1,10 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 min-vh-100">
     <h2>{{ touristSpot.position }}</h2>
 
     <div class="mb-3">
-      <button type="button" class="btn btn-secondary btn-sm" @click="deleteFavoriteSpot(touristSpot.id)" v-if="alreadyFavorite">已收藏</button>
-      <button type="button" class="btn btn-outline-secondary btn-sm" @click="addFavoriteSpot" v-else>收藏</button>
+      <button type="button" class="btn btn-outline-secondary btn-sm" @click="addFavoriteSpot" v-if="alreadyFavorite">收藏</button>
+      <button type="button" class="btn btn-secondary btn-sm" @click="deleteFavoriteSpot" v-else>已收藏</button>
     </div>
 
     <p>{{ touristSpot.description }}</p>
@@ -46,7 +46,7 @@ export default {
           .post(url)
           .then((res) => {
             console.log(res);
-            this.alreadyFavorite = true;
+            this.alreadyFavorite = false;
           })
           .catch((err) => {
             console.log(err);
@@ -104,7 +104,7 @@ export default {
           .then((res) => {
             console.log(res);
             const isFavorite = res.data.favorite.map((item) => item.id);
-            this.alreadyFavorite = isFavorite.includes(this.touristSpot.id);
+            this.alreadyFavorite = !isFavorite.includes(this.touristSpot.id);
             // console.log(this.alreadyFavorite);
           })
           .catch((err) => {

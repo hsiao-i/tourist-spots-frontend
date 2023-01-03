@@ -29,10 +29,16 @@
   <div class="container mt-5">
     <router-view />
   </div>
+  <FrontFooter />
 </template>
 
 <script>
+import FrontFooter from '@/components/FrontFooter.vue';
+
 export default {
+  components: {
+    FrontFooter,
+  },
   data() {
     return {
       checkSuccess: false,
