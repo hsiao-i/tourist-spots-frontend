@@ -90,6 +90,8 @@ export default {
     },
     signOut() {
       document.cookie = 'accessToken=;refreshToken=;';
+      document.cookie = 'refreshToken=;';
+      this.notSavedAccessToken = true;
       this.$router.push('/');
     },
   },
