@@ -55,8 +55,8 @@ export default {
   methods: {
     getCookie() {
       const refreshToken = document.cookie.replace(/(?:(?:^|.*;\s*)refreshToken\s*\=\s*([^;]*).*$)|^.*$/, '$1');
-
-      if (refreshToken !== null) {
+      // console.log(refreshToken === '');
+      if (refreshToken !== '') {
         this.notSavedAccessToken = false;
       }
     },

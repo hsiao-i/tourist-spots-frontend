@@ -53,7 +53,7 @@ export default {
           const accessToken = res.data.success.access_token;
           const refreshToken = res.data.success.refresh_token;
 
-          if (this.user.useremail === 'test1@mail.com' || 'test1@gmail.com') {
+          if (this.user.useremail === 'test1@mail.com') {
             document.cookie = `accessToken=${accessToken}`;
             document.cookie = `refreshToken=${refreshToken}`;
 
